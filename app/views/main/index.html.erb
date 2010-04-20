@@ -1,0 +1,18 @@
+<h1>Welcome to Dantronics!</h1>
+<u><h3>Our Products</h3></u>
+<br />
+Filter By Category:
+<% form_for @category, :url => { :action => :index }, :html => {:id => "filter"} do |form| %>
+<%= form.collection_select(:id, @categories, :id, :name, {}, {:onchange => "document.getElementById('filter').submit();" }) %>
+<% end %>
+<br />
+<table border="1" cellpadding="3" cellspacing="3">
+<% for product in @products -%>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.details %></td>
+			<td>$<%= product.price %></td>
+		</tr>
+<br />
+<% end %>
+</table>
