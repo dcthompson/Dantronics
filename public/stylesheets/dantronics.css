@@ -1,0 +1,17 @@
+#banner{
+	background: blue;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 10px;
+	font: small-caps 40px/40px "Times New Roman", serif;
+	color: lightgreen;
+	text-align: center;
+}
+
+.items {
+	background: #7FFF00;
+}
+
+#selectArea {
+	background: #CD2626;
+}

@@ -1,12 +1,22 @@
-<h1>Welcome to Dantronics!</h1>
+<html>
+<head>
+	<%= stylesheet_link_tag 'dantronics' %>
+</head>
+<body>
+<div id='banner'>
+	<h1>Welcome to Dantronics!</h1>
+</div
 <u><h3>Our Products</h3></u>
 <br />
+<span id="selectArea">
 Filter By Category:
+
 <% form_for @category, :url => { :action => :index }, :html => {:id => "filter"} do |form| %>
 <%= form.collection_select(:id, @categories, :id, :name, {}, {:onchange => "document.getElementById('filter').submit();" }) %>
 <% end %>
+</span>
 <br />
-<table border="1" cellpadding="3" cellspacing="3">
+<table class='items' border="1" cellpadding="3" cellspacing="3">
 <% for product in @products -%>
 		<tr>
 			<td><%= product.name %></td>
@@ -16,3 +26,6 @@ Filter By Category:
 <br />
 <% end %>
 </table>
+
+</body>
+</html>
